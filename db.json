@@ -11,6 +11,36 @@
       "productPrice": 23000000,
       "productCategory": "Laptop",
       "id": 9
+    },
+    {
+      "productName": "Macbook Pro M2 2023",
+      "productPrice": 20000000,
+      "productCategory": "Laptop",
+      "id": 10
+    },
+    {
+      "productName": "Asus ROG Strix",
+      "productPrice": 23000000,
+      "productCategory": "Laptop",
+      "id": 11
+    },
+    {
+      "productName": "Apple iPhone 14 Pro Max 1 TB",
+      "productPrice": 29000000,
+      "productCategory": "Smartphone",
+      "id": 12
+    },
+    {
+      "productName": "Casio SGW-400H",
+      "productPrice": 1500000,
+      "productCategory": "Watch",
+      "id": 13
+    },
+    {
+      "productName": "Air Jordan 1 Off White",
+      "productPrice": 16000000,
+      "productCategory": "Shoes",
+      "id": 14
     }
   ]
 }
