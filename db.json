@@ -7,8 +7,8 @@
       "id": 7
     },
     {
-      "productName": "Asus ROG Strix",
-      "productPrice": 23000000,
+      "productName": "Asus ROG Strix G-12",
+      "productPrice": "28000000",
       "productCategory": "Laptop",
       "id": 9
     },
@@ -19,8 +19,8 @@
       "id": 10
     },
     {
-      "productName": "Asus ROG Strix",
-      "productPrice": 23000000,
+      "productName": "Asus ROG Strix PV18XV",
+      "productPrice": "35000000",
       "productCategory": "Laptop",
       "id": 11
     },
@@ -37,8 +37,8 @@
       "id": 13
     },
     {
-      "productName": "Air Jordan 1 Off White",
-      "productPrice": 16000000,
+      "productName": "Air Jordan 1 Off White Size 41",
+      "productPrice": "18000000",
       "productCategory": "Shoes",
       "id": 14
     }
