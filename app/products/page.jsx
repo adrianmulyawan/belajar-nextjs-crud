@@ -1,4 +1,5 @@
 import AddProduct from "./addProduct";
+import DeleteProduct from "./deleteProduct";
 
 // > get all data products
 const getProducts = async () => {
@@ -35,34 +36,28 @@ const Product = async () => {
               </thead>
               <tbody>
                 {
-                  products && (
-                    products.map((product, index) => {
-                      return (
-                        <tr>
-                          <th scope="row" className="text-center">
-                            { index += 1 }
-                          </th>
-                          <td className="text-center">
-                            { product.productName }
-                          </td>
-                          <td className="text-center">
-                            { product.productPrice }
-                          </td>
-                          <td className="text-center">
-                            { product.productCategory }
-                          </td>
-                          <td className="text-center">
-                            <span className="badge bg-secondary">
-                              Edit
-                            </span>
-                            <span className="badge bg-danger mx-2">
-                              Delete
-                            </span>
-                          </td>
-                        </tr>
-                      )
-                    })
-                  )
+                  products.map((product, index) => (
+                    <tr key={ product.id }>
+                      <th scope="row" className="text-center">
+                        { index += 1 }
+                      </th>
+                      <td className="text-center">
+                        { product.productName }
+                      </td>
+                      <td className="text-center">
+                        { product.productPrice }
+                      </td>
+                      <td className="text-center">
+                        { product.productCategory }
+                      </td>
+                      <td className="text-center">
+                        <span className="badge bg-secondary me-2">
+                          Edit
+                        </span>
+                        <DeleteProduct { ...product } />
+                      </td>
+                    </tr>
+                  ))
                 }
               </tbody>
             </table>
