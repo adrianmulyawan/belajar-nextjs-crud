@@ -1,3 +1,5 @@
+import AddProduct from "./addProduct";
+
 // > get all data products
 const getProducts = async () => {
   // > menambahkan argument kedua { cache: 'no-store' }, agar dia menjadi data dinamis (seolah-olah mengguakan getServerSideProps).
@@ -18,9 +20,10 @@ const Product = async () => {
       <div className="container mt-3">
         <h2>Products List</h2>
         <hr />
+        <AddProduct />
         <div className="row my-3">
           <div className="card p-3">
-            <table class="table table-responsive table-bordered table-striped">
+            <table className="table table-responsive table-bordered table-striped">
               <thead>
                 <tr>
                   <th scope="col" className="text-center">No</th>
@@ -49,10 +52,10 @@ const Product = async () => {
                             { product.productCategory }
                           </td>
                           <td className="text-center">
-                            <span class="badge bg-secondary">
+                            <span className="badge bg-secondary">
                               Edit
                             </span>
-                            <span class="badge bg-danger mx-2">
+                            <span className="badge bg-danger mx-2">
                               Delete
                             </span>
                           </td>
