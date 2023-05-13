@@ -1,0 +1,34 @@
+{
+  "products": [
+    { 
+      "id": 1, 
+      "productName": "Apple Macbook Pro 2023 M2", 
+      "productPrice": 28000000,
+      "productCategory": "Laptop"
+    },
+    { 
+      "id": 2, 
+      "productName": "Apple iPad Pro 2023 M1", 
+      "productPrice": 19000000,
+      "productCategory": "Laptop"
+    },
+    { 
+      "id": 3, 
+      "productName": "Microsoft Surface 2022", 
+      "productPrice": 18000000,
+      "productCategory": "Laptop"
+    },
+    { 
+      "id": 4, 
+      "productName": "Apple iPhone 14 Pro Max 512 GB", 
+      "productPrice": 22000000,
+      "productCategory": "Smartphone"
+    },
+    { 
+      "id": 5, 
+      "productName": "Samsung Galaxy S23 Ultra 512 GB", 
+      "productPrice": 23000000,
+      "productCategory": "Smartphone"
+    }
+  ]
+}
