@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const DeleteProduct = (product) => {
-  console.info(product, '=> product');
+  // console.info(product, '=> product');
 
   // > state
   const [isMutating, setIsMutating] = useState(false);
