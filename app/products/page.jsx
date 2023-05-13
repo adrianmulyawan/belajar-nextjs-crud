@@ -1,5 +1,6 @@
 import AddProduct from "./addProduct";
 import DeleteProduct from "./deleteProduct";
+import Link from "next/link";
 
 // > get all data products
 const getProducts = async () => {
@@ -51,9 +52,11 @@ const Product = async () => {
                         { product.productCategory }
                       </td>
                       <td className="text-center">
-                        <span className="badge bg-secondary me-2">
-                          Edit
-                        </span>
+                        <div className="mx-2">
+                          <Link href={`/products/${product.id}`} className="badge bg-secondary text-decoration-none">
+                            Update
+                          </Link>
+                        </div>
                         <DeleteProduct { ...product } />
                       </td>
                     </tr>
