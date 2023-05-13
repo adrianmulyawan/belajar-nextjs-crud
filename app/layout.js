@@ -1,19 +1,20 @@
 "use client"
 
-import './globals.css'
-import { Inter } from 'next/font/google'
+import './globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap';
-
-const inter = Inter({ subsets: ['latin'] })
+import { useEffect } from 'react';
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    require('bootstrap/dist/js/bootstrap');
+  }, [])
+
   return (
     <html lang="en">
       <head>
         <title>NextJS CRUD</title>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
