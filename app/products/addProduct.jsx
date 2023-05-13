@@ -1,15 +1,53 @@
 "use client"
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const AddProduct = () => {
+  // > state
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productCategory, setProductCategory] = useState('');
-  
-  const handleAddProduct = (event) => {
-    event.preventDefault();
+  const [isMutating, setIsMutating] = useState(false);
 
-    console.info(productName, productPrice, productCategory, 'datanya mi');
+  // > router
+  const router = useRouter();
+
+  // > function handle when form in submit
+  const handleAddProduct = async (event) => {
+    event.preventDefault();
+    
+    // > setIsMutating = true
+    setIsMutating(true);
+
+    // > parse price to int
+    const parsePriceToInt = parseInt(productPrice)
+
+    // > catch data from form in object
+    const data = {
+      productName: productName,
+      productPrice: parsePriceToInt,
+      productCategory: productCategory
+    };
+
+    // console.info(data, 'ini data product');
+
+    // > insert product to api
+    await fetch('  http://localhost:3004/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    // set mutating = false
+    setIsMutating(false);
+
+    // > set product name, price, category to string ''
+    setProductName('');
+    setProductPrice('');
+    setProductCategory('');
+
+    // > refresh page
+    router.refresh();
   };
 
   return (
@@ -35,24 +73,32 @@ const AddProduct = () => {
                   <label htmlFor="productName" className="form-label">
                     Product Name
                   </label>
-                  <input type="text" className="form-control" id="productName" name="productName" onChange={ (e) => setProductName(e.target.value) } placeholder="Enter Product Name" />
+                  <input type="text" className="form-control" id="productName" name="productName" value={ productName } onChange={ (e) => setProductName(e.target.value) } placeholder="Enter Product Name" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="productPrice" className="form-label">
                     Product Price
                   </label>
-                  <input type="text" className="form-control" id="productPrice" name="productPrice" onChange={ (e) => setProductPrice(e.target.value) } placeholder="Enter Product Price" />
+                  <input type="text" className="form-control" id="productPrice" name="productPrice" value={ productPrice } onChange={ (e) => setProductPrice(e.target.value) } placeholder="Enter Product Price" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="productCategory" className="form-label">
                     Product Category
                   </label>
-                  <input type="text" className="form-control" id="productCategory" name="productCategory" onChange={ (e) => setProductCategory(e.target.value) } placeholder="Enter Product Price" />
+                  <input type="text" className="form-control" id="productCategory" name="productCategory" value={ productCategory } onChange={ (e) => setProductCategory(e.target.value) } placeholder="Enter Product Price" />
                 </div>
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" className="btn btn-primary mx-2">
-                  Save Product
-                </button>
+                {
+                  isMutating === false ? (
+                    <button type="submit" className="btn btn-primary mx-2">
+                    Save Product
+                  </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary mx-2 disabled">
+                      Saving...
+                    </button>
+                  )
+                }
               </form>
             </div>
           </div>
